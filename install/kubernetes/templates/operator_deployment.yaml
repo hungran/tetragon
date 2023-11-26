@@ -33,6 +33,12 @@ spec:
           capabilities:
             drop:
               - "ALL"
+        {{- if .Values.tetragonOperator.metrics.enabled }}
+        ports:
+          - containerPort: {{ .Values.tetragonOperator.metrics.port }}
+            name: metrics
+            protocol: TCP
+        {{- end }}
         livenessProbe:
           httpGet:
             path: /healthz

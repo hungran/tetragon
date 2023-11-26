@@ -171,6 +171,11 @@ tetragonOperator:
     # -- Enables the PodInfo CRD and the controller that reconciles PodInfo
     # custom resources.
     enabled: false
+  # -- Enables the Tetragon Operator metrics.
+  metrics:
+    enabled: true
+    # -- The port at which to expose metrics.
+    port: 2113
 export:
   # "stdout". "" to disable.
   mode: "stdout"
